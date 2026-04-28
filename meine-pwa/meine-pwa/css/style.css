@@ -1,0 +1,28 @@
+/* ================================
+   Deine CSS-Stile hier schreiben
+   ================================
+
+   Nützliche iPhone-Variablen:
+   env(safe-area-inset-top)    → Abstand oben  (Dynamic Island / Notch)
+   env(safe-area-inset-bottom) → Abstand unten (Home-Balken)
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; /* kein blaues Highlight beim Tippen */
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  background: #f2f2f7;
+  color: #000;
+  max-width: 430px;   /* iPhone-Breite */
+  margin: 0 auto;
+  min-height: 100vh;
+
+  /* Safe Area für Notch & Home-Balken */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}

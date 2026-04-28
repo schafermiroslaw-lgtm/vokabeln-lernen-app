@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+
+  <!-- PWA & iPhone Einstellungen -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Meine App" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- App-Icons für iPhone Homescreen -->
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="icons/icon-120.png" />
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json" />
+
+  <title>Meine App</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Dein Inhalt kommt hier rein -->
+
+  <h1>welche sprache willst du lernen?</h1>
+  <input type="text" id="sprache" placeholder="Sprache:" />
+  <button onclick="saveInput()">Save</button>
+  <button onclick="goToNextPage()">Weiter</button>
+
+
+<script>
+function goToNextPage() {
+  // Optional: Save your data first
+  // localStorage.setItem('data', value);
+  
+  window.location.href = "lernen";
+}
+</script>
+
+  
+
+  <script src="js/app.js"></script>
+
+  <!-- Service Worker registrieren (macht die App offline-fähig) -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</body>
+</html>
